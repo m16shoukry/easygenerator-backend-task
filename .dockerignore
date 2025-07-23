@@ -1,0 +1,10 @@
+node_modules
+dist
+test
+.git
+.gitignore
+Dockerfile
+.github
+.env
+.env.*
+README.md 
