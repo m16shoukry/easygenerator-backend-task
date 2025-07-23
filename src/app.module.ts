@@ -7,7 +7,6 @@ import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
 import { EmailModule } from './email/email.module';
 import { RedisModule } from './redis/redis.module';
-import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [

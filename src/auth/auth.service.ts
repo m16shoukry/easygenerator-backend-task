@@ -22,7 +22,7 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async validateUser(username: string, password: string): Promise<User | null> {
+  async validateUser(username: string): Promise<User | null> {
     const user = this.usersService.findByEmail(username);
     if (user) {
       return user;

@@ -17,7 +17,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
   catch(error: Error, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
-    const request = ctx.getRequest();
+    // const request = ctx.getRequest();
 
     const status =
       error instanceof HttpException

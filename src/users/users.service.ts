@@ -1,4 +1,4 @@
-import { Injectable, BadRequestException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { User } from './entities/user.entity';
@@ -46,9 +46,8 @@ export class UsersService {
   }
 
   async getProfileById(id: string): Promise<UserProfileDto | null> {
-    const user = await this.userModel.findById(id).lean();
+    const user = await this.userModel.findById(id, '-password').lean();
     if (!user) return null;
-    const { password, ...profile } = user;
-    return profile as unknown as UserProfileDto;
+    return user as unknown as UserProfileDto;
   }
 }
